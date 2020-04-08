@@ -3,7 +3,6 @@ package issuemanagement.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -21,8 +20,8 @@ public class User extends BaseEntity {
     @Column(name = "username",length = 100,unique = true)
     private String username;
 
-    @Column(name = "name_Surname",length = 200)
-    private String nameSurname;
+    @Column(name = "Surname",length = 200)
+    private String surname;
 
     @Column(name = "email",length = 100)
     private String email;

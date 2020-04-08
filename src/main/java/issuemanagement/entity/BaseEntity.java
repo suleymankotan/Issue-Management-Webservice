@@ -7,7 +7,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 @MappedSuperclass
@@ -24,7 +24,7 @@ public class BaseEntity implements Serializable {
     @Temporal(TemporalType.TIME)
     private Date updatedAt;
 
-    @Column(name = "updated_At",length = 100)
+    @Column(name = "updated_By",length = 100)
     private String updatedBy;
 
     @Column(name = "status")
