@@ -12,6 +12,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Table(name = "users")
+@Builder
 public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -11,6 +11,7 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Table(name = "Project")
+@Builder
 public class Project extends BaseEntity {
 
     @Id

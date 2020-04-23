@@ -13,6 +13,7 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 @Table(name = "IssueHistory")
+@Builder
 public class IssueHistory extends BaseEntity {
 
     @Id
