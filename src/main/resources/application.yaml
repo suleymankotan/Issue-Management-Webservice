@@ -3,12 +3,13 @@ server:
   port: 8001
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/issue
+    #url: jdbc:postgresql://localhost:5432/issue
+    url: jdbc:postgresql://testdb.c123lyxq7he8.eu-central-1.rds.amazonaws.com:5432/postgres
     username: postgres
-    password: 123456
+    password: Testdb01.
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       javax:
