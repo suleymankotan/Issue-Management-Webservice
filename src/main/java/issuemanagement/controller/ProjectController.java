@@ -2,12 +2,10 @@ package issuemanagement.controller;
 
 import issuemanagement.model.ProjectModel;
 import issuemanagement.service.ProjectService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/project")
@@ -22,6 +20,10 @@ public class ProjectController {
     @GetMapping("/{id}")
     public ResponseEntity<ProjectModel> getById( @PathVariable Long id){
         return ResponseEntity.ok(projectService.getById(id));
+    }
+    @PostMapping
+    public ResponseEntity<ProjectModel> createProject(@Valid @RequestBody ProjectModel projectModel){
+        return  ResponseEntity.ok(projectService.save(projectModel));
     }
 
 

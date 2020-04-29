@@ -2,8 +2,7 @@ server:
   port: 8001
 spring:
   datasource:
-    #url: jdbc:postgresql://localhost:5432/issue
-    url: jdbc:postgresql://testdb.c123lyxq7he8.eu-central-1.rds.amazonaws.com:5432/postgres
+    url: jdbc:postgresql://testdb.c123lyxq7he8.eu-central-1.rds.amazonaws.com:5432/Issue
     username: postgres
     password: Testdb01.
   jpa:

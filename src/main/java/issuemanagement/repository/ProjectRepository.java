@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface ProjectRepository extends JpaRepository<Project,Long>{
 
+    Project getById(Long id);
+
     Page<Project> findAll(Pageable pageable);
 
     List<Project> findAll(Sort sort);

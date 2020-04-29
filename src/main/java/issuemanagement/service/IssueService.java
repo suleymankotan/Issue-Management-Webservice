@@ -1,16 +1,15 @@
 package issuemanagement.service;
+
 import issuemanagement.entity.Issue;
 import issuemanagement.model.IssueModel;
 import issuemanagement.repository.IssueRepository;
 import issuemanagement.util.TPage;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Service
 public class IssueService {
