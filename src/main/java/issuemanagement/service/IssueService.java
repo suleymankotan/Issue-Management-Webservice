@@ -5,6 +5,7 @@ import issuemanagement.model.IssueModel;
 import issuemanagement.repository.IssueRepository;
 import issuemanagement.util.TPage;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -14,13 +15,10 @@ import java.util.Arrays;
 @Service
 public class IssueService {
 
+    @Autowired
     IssueRepository issueRepository;
+    @Autowired
     ModelMapper modelMapper;
-
-    public IssueService(IssueRepository issueRepository,ModelMapper modelMapper) {
-        this.issueRepository = issueRepository;
-        this.modelMapper=modelMapper;
-    }
 
     public IssueModel save(IssueModel issueModel){
         if (issueModel.getDate()==null)
@@ -44,7 +42,11 @@ public class IssueService {
         return page;
     }
 
-    public Boolean delete(IssueModel issueModel){
+    public Boolean delete(Long id){
+        return null;
+    }
+
+    public IssueModel updateIssue(IssueModel issueModel, Long id) {
         return null;
     }
 }

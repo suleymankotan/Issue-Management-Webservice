@@ -1,12 +1,18 @@
 server:
   port: 8001
 spring:
+  application:
+    name: issue-management
   datasource:
-    url: jdbc:postgresql://testdb.c123lyxq7he8.eu-central-1.rds.amazonaws.com:5432/Issue
-    username: postgres
-    password: Testdb01.
+    url: ${DB_URL:jdbc:postgresql://testdb.c123lyxq7he8.eu-central-1.rds.amazonaws.com:5432/Issue}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:Testdb01.}
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 10000
+      minimum-idle: 2
+      idle-timeout: 10000
   jpa:
-    open-in-view: false
     hibernate:
       ddl-auto: update
     show-sql: true
@@ -15,3 +21,5 @@ spring:
         persistence:
           validation:
             mode: none
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
