@@ -23,15 +23,15 @@ public class IssueService {
     public IssueModel save(IssueModel issueModel){
         if (issueModel.getDate()==null)
             throw  new IllegalArgumentException("Issue Date cannot be null");
-
         Issue issueDb = modelMapper.map(issueModel,Issue.class);
         issueDb= issueRepository.save(issueDb);
         return modelMapper.map(issueDb,IssueModel.class);
     }
 
     public IssueModel getById(Long id){
-
-        return null;
+        if (issueRepository.getById(id) == null)
+            throw new IllegalArgumentException("Issue not found");
+        return modelMapper.map(issueRepository.getById(id),IssueModel.class);
     }
 
     public TPage<IssueModel> getAllPageable(Pageable pageable){
@@ -43,10 +43,25 @@ public class IssueService {
     }
 
     public Boolean delete(Long id){
-        return null;
+        if (issueRepository.getById(id)==null)
+            throw new IllegalArgumentException("Issue not found");
+        issueRepository.deleteById(id);
+        return true;
     }
 
     public IssueModel updateIssue(IssueModel issueModel, Long id) {
-        return null;
+        if (issueRepository.getById(id)==null)
+            throw  new IllegalArgumentException("Issue  cannot be null");
+        Issue issue= issueRepository.getById(id);
+        issue.setAssignee(null);
+        issue.setDate(issueModel.getDate());
+        issue.setDescription(issueModel.getDescription());
+        issue.setDetails(issueModel.getDetails());
+        issue.setIssueStatus(issueModel.getIssueStatus());
+        issue.setUpdatedAt(null);
+        issue.setProject(null);
+        issue.setUpdatedBy(null);
+        issueRepository.save(issue);
+        return modelMapper.map(issue,IssueModel.class);
     }
 }

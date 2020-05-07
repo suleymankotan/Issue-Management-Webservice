@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+@RestController
+@RequestMapping("/issue")
 public class IssueController {
     @Autowired
     IssueService issueService;

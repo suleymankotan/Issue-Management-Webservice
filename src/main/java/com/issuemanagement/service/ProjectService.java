@@ -31,6 +31,8 @@ public class ProjectService {
     }
 
     public ProjectModel getById(Long id){
+        if (projectRepository.getById(id) == null)
+            throw new IllegalArgumentException("Project Id null");
         Project project = projectRepository.getById(id);
         return modelMapper.map(project,ProjectModel.class);
     }
