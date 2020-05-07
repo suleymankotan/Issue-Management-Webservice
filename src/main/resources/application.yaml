@@ -4,7 +4,7 @@ spring:
   application:
     name: issue-management
   datasource:
-    url: ${DB_URL:jdbc:postgresql://testdb.c123lyxq7he8.eu-central-1.rds.amazonaws.com:5432/Issue}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/issue}
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:Testdb01.}
     hikari:

@@ -1,4 +1,4 @@
-package issuemanagement.entity;
+package com.issuemanagement.entity;
 
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package issuemanagement.model;
+package com.issuemanagement.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

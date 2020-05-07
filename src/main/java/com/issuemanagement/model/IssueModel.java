@@ -1,6 +1,6 @@
-package issuemanagement.model;
+package com.issuemanagement.model;
 
-import issuemanagement.entity.IssueStatus;
+import com.issuemanagement.entity.IssueStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

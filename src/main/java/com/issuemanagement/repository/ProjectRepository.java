@@ -1,6 +1,6 @@
-package issuemanagement.repository;
+package com.issuemanagement.repository;
 
-import issuemanagement.entity.Project;
+import com.issuemanagement.entity.Project;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

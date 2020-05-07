@@ -1,9 +1,9 @@
-package issuemanagement.service;
+package com.issuemanagement.service;
 
-import issuemanagement.entity.Project;
-import issuemanagement.model.ProjectModel;
-import issuemanagement.repository.ProjectRepository;
-import issuemanagement.util.TPage;
+import com.issuemanagement.entity.Project;
+import com.issuemanagement.model.ProjectModel;
+import com.issuemanagement.repository.ProjectRepository;
+import com.issuemanagement.util.TPage;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

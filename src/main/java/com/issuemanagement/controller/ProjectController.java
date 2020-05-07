@@ -1,7 +1,7 @@
-package issuemanagement.controller;
+package com.issuemanagement.controller;
 
-import issuemanagement.model.ProjectModel;
-import issuemanagement.service.ProjectService;
+import com.issuemanagement.model.ProjectModel;
+import com.issuemanagement.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

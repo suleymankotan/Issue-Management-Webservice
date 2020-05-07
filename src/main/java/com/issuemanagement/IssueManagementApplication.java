@@ -1,4 +1,4 @@
-package issuemanagement;
+package com.issuemanagement;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

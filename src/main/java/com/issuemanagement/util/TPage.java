@@ -1,4 +1,4 @@
-package issuemanagement.util;
+package com.issuemanagement.util;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;

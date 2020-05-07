@@ -1,6 +1,6 @@
-package issuemanagement.repository;
+package com.issuemanagement.repository;
 
-import issuemanagement.entity.User;
+import com.issuemanagement.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User,Long> {

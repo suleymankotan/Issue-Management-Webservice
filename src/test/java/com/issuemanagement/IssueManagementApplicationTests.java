@@ -1,4 +1,4 @@
-package issuemanagement;
+package com.issuemanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

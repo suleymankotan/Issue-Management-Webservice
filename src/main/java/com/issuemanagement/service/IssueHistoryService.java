@@ -1,8 +1,8 @@
-package issuemanagement.service;
+package com.issuemanagement.service;
 
-import issuemanagement.entity.IssueHistory;
+import com.issuemanagement.entity.IssueHistory;
 
-import issuemanagement.repository.IssueHistoryRepository;
+import com.issuemanagement.repository.IssueHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
