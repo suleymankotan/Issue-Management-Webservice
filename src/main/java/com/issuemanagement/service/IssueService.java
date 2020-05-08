@@ -4,6 +4,7 @@ import com.issuemanagement.entity.Issue;
 import com.issuemanagement.model.IssueModel;
 import com.issuemanagement.repository.IssueRepository;
 import com.issuemanagement.util.TPage;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 
 @Service
+@Slf4j
 public class IssueService {
 
     @Autowired
@@ -62,6 +64,7 @@ public class IssueService {
         issue.setProject(null);
         issue.setUpdatedBy(null);
         issueRepository.save(issue);
+        log.info("Issue update IssueId:"+issue.getId());
         return modelMapper.map(issue,IssueModel.class);
     }
 }

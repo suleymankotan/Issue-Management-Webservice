@@ -10,6 +10,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/issue")
+@CrossOrigin
 public class IssueController {
     @Autowired
     IssueService issueService;

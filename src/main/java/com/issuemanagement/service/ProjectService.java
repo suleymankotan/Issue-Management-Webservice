@@ -4,22 +4,21 @@ import com.issuemanagement.entity.Project;
 import com.issuemanagement.model.ProjectModel;
 import com.issuemanagement.repository.ProjectRepository;
 import com.issuemanagement.util.TPage;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ProjectService {
 
-    @Autowired
-    ProjectRepository projectRepository;
-    @Autowired
-    ModelMapper modelMapper;
-
-
+   private final ProjectRepository projectRepository;
+   private final ModelMapper modelMapper;
 
     public ProjectModel save(ProjectModel projectModel){
         Project projectCodeCheck = projectRepository.getByProjectCode(projectModel.getProjectCode());
@@ -53,7 +52,10 @@ public class ProjectService {
     }
 
     public TPage<ProjectModel> getAllPageable(Pageable pageable){
-        return null;
+        Page<Project> projectPage =projectRepository.findAll(pageable);
+        TPage<ProjectModel> projectModelTPage = new TPage<ProjectModel>();
+        projectModelTPage.setStat(projectPage, Arrays.asList(modelMapper.map(projectPage.getContent(),ProjectModel[].class)));
+        return projectModelTPage ;
     }
 
     public List<Project> getByProjectCodeContains(String projectCode){
